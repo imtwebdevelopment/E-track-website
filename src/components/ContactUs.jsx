@@ -53,7 +53,7 @@ export default function ContactUs() {
               <div className="d-flex align-items-start mb-4 contact-detail-item">
                 <i className="bi bi-geo-alt-fill fs-3 me-3 contact-icon text-color"></i>
                 <div>
-                  <h6 className="fw-bold mb-0 text-uppercase text-color">INQUIRIES OFFICE</h6>
+                  <h6 className="fw-bold mb-0 text-uppercase text-color">OFFICE</h6>
                   <p className="mb-0 small text-color">21189 Dana CT.</p>
                   <p className="mb-0 small text-color">Ashburn, VA 20148</p>
                 </div>
@@ -64,7 +64,7 @@ export default function ContactUs() {
                 <div>
                   <h6 className="fw-bold mb-0 text-uppercase text-color">ORDER DESK</h6>
                   <p className="mb-0 small text-color">703-880-6311 (Order Desk)</p>
-                  <p className="mb-0 small text-color">703-649-4441</p>
+                  <p className="mb-0 small text-color">703-649-4441 (Inquiries)</p>
                 </div>
               </div>
 
