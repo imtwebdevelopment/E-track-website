@@ -1,0 +1,12 @@
+@import "./styles/global.css";
+
+/* import component-level css */
+@import "./components/Navbar.css";
+@import "./components/Home.css";
+@import "./components/About.css";
+@import "./components/TitleServices.css";
+@import "./components/MortgageServices.css";
+@import "./components/RoofingReports.css";
+@import "./components/WhyChoose.css";
+@import "./components/Contact.css";
+@import "./components/Footer.css";

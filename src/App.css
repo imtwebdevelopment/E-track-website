@@ -1,0 +1,2801 @@
+/* ---------------- Root Variables (Standard Definitions) ---------------- */
+
+
+
+:root {
+
+
+
+  --brand-text-color: #333; 
+
+
+
+  --navbar-light-bg: rgba(255, 255, 255, 0.8);
+
+
+
+  --navbar-light-scrolled-bg: rgba(255, 255, 255, 0.95);
+
+
+
+  --brand-blue-dark: #15325c; /* Main dark blue */
+
+
+
+  --brand-blue-mid: #2d60a5; /* Mid-tone blue */
+
+
+
+  --brand-sky-accent: #5ad9f9; /* Bright accent color */
+
+
+
+  --gradient-main: linear-gradient(90deg, #2d60a5 0%, #5ad9f9 100%);
+
+
+
+  --gradient-glow: radial-gradient(circle, #5ad9f9 0%, transparent 70%);
+
+
+
+  --section-padding: 100px 0;
+
+
+
+  --section-bg-light: #f8f9fa; 
+
+
+
+  --text-light-color: #e0e0e0; /* A soft white for text on dark backgrounds */
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Base Styles ---------------- */
+
+
+
+
+
+
+
+* {
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+
+
+
+
+body {
+
+
+
+  margin-top: 90px; 
+
+
+
+  font-family: "Poppins", sans-serif;
+
+
+
+  color: var(--brand-text-color); 
+
+
+
+  background: #fff;
+
+
+
+  overflow-x: hidden;
+
+
+
+  scroll-behavior: smooth;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Navbar (Enhanced Layout and Style) ---------------- */
+
+
+
+
+
+
+
+.navbar {
+
+
+
+  height: 90px;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  background: var(--navbar-light-bg);
+
+
+
+  backdrop-filter: blur(10px);
+
+
+
+  transition: all 0.5s ease;
+
+
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+
+
+  padding: 0 20px;
+
+
+
+  z-index: 999;
+
+
+
+  position: fixed;
+
+
+
+  top: 0;
+
+
+
+  left: 0;
+
+
+
+  right: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar.scrolled {
+
+
+
+  height: 80px;
+
+
+
+  background: var(--navbar-light-scrolled-bg);
+
+
+
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+
+
+
+}
+
+
+
+
+
+
+
+.navbar .container {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: space-between;
+
+
+
+  position: relative;
+
+
+
+  width: 100%;
+
+
+
+  max-width: 1300px;
+
+
+
+  padding: 0;
+
+
+
+  margin: 0 auto;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Logo Fixed Left ---------------- */
+
+
+
+
+
+
+
+.navbar-logo {
+
+
+
+  position: relative;
+
+
+
+  flex-shrink: 0;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  cursor: pointer;
+
+
+
+  z-index: 10;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar-logo img {
+
+
+
+  height: 100px;
+
+
+
+  width: auto;
+
+
+
+  transition: transform 0.4s ease, filter 0.4s ease, height 0.3s ease;
+
+
+
+  animation: logo-pulse 8s infinite ease-in-out alternate;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar-logo img:hover {
+
+
+
+  transform: scale(1.15) rotate(-2deg);
+
+
+
+  filter: drop-shadow(0 0 15px var(--brand-sky-accent)) brightness(1.1);
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Navbar Menu & Toggler ---------------- */
+
+
+
+
+
+
+
+.navbar-menu-wrapper {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  flex-grow: 0;
+
+
+
+  justify-content: flex-end;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Navigation Links Polish */
+
+
+
+
+
+
+
+.navbar .nav-link {
+
+
+
+  color: var(--brand-blue-dark);
+
+
+
+  font-weight: 600;
+
+
+
+  text-transform: uppercase;
+
+
+
+  letter-spacing: 1px;
+
+
+
+  transition: all 0.3s ease;
+
+
+
+  position: relative;
+
+
+
+  padding: 10px 15px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar .nav-link:not(.dropdown-toggle)::after {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  bottom: -5px;
+
+
+
+  left: 50%;
+
+
+
+  width: 0;
+
+
+
+  height: 2px;
+
+
+
+  background: var(--brand-sky-accent);
+
+
+
+  transition: width 0.3s ease, left 0.3s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar .nav-link:not(.dropdown-toggle):hover::after {
+
+
+
+  width: 100%;
+
+
+
+  left: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar .nav-link:hover {
+
+
+
+  color: var(--brand-sky-accent);
+
+
+
+}
+
+
+
+
+
+
+
+/* Navbar Dropdown */
+
+
+
+
+
+
+
+.nav-item.dropdown:hover .dropdown-menu {
+
+
+
+  display: block;
+
+
+
+  margin-top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.dropdown-menu {
+
+
+
+  background-color: var(--brand-blue-mid);
+
+
+
+  border: 1px solid var(--brand-sky-accent);
+
+
+
+  border-radius: 6px;
+
+
+
+  padding: 0;
+
+
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+
+
+}
+
+
+
+
+
+
+
+.dropdown-menu li a {
+
+
+
+  color: #249de9;
+
+
+
+  padding: 10px 15px;
+
+
+
+  transition: background-color 0.3s, color 0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+.dropdown-menu li a:hover {
+
+
+
+  background-color: var(--brand-blue-dark);
+
+
+
+  color: var(--brand-sky-accent);
+
+
+
+}
+
+
+
+
+
+
+
+/* Contact button Polish */
+
+
+
+
+
+
+
+.navbar .btn-outline-light {
+
+
+
+  color: var(--brand-blue-mid);
+
+
+
+  border-color: var(--brand-blue-mid);
+
+
+
+  font-weight: 700;
+
+
+
+  transition: all 0.3s ease;
+
+
+
+  padding: 8px 20px;
+
+
+
+  border-radius: 5px;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar .btn-outline-light:hover {
+
+
+
+  color: #fff;
+
+
+
+  background-color: var(--brand-blue-mid);
+
+
+
+  border-color: var(--brand-blue-mid);
+
+
+
+  box-shadow: 0 5px 15px rgba(21, 50, 92, 0.3);
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Hero Section ---------------- */
+
+
+
+
+
+
+
+.hero-section {
+
+
+
+  position: relative;
+
+
+
+  height: 100vh;
+
+
+
+  background-size: cover;
+
+
+
+  background-position: center;
+
+
+
+  background-attachment: fixed;
+
+
+
+  color: white;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: flex-start;
+
+
+
+  text-align: left;
+
+
+
+  overflow: hidden;
+
+
+
+  transition: transform 0.1s ease-out;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section.parallax {
+
+
+
+  transform: translateY(20px);
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section::before {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  inset: -50px;
+
+
+
+  background: radial-gradient(circle at 10% 20%, var(--brand-sky-accent) 0%, transparent 30%), 
+
+
+
+              radial-gradient(circle at 80% 90%, var(--brand-blue-mid) 0%, transparent 40%);
+
+
+
+  opacity: 0.35;
+
+
+
+  z-index: 1;
+
+
+
+  animation: rotatingGlow 15s infinite linear;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section > .container {
+
+
+
+  position: relative;
+
+
+
+  z-index: 2;
+
+
+
+  padding: 0 15px;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section h1 {
+
+
+
+  font-size: 4rem;
+
+
+
+  letter-spacing: 2px;
+
+
+
+  color: #fff;
+
+
+
+  text-shadow: 0 0 7px var(--brand-sky-accent), 0 0 15px var(--brand-sky-accent), 0 0 25px rgba(90, 217, 249, 0.7);
+
+
+
+  animation: fadeSlideDown 1.4s ease both, glowPulse 3s infinite ease-in-out;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section p {
+
+
+
+  margin-top: 1.5rem;
+
+
+
+  font-size: 1.5rem;
+
+
+
+  color: var(--brand-sky-accent);
+
+
+
+  font-weight: 500;
+
+
+
+  animation: fadeSlideUp 1.8s ease both;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Buttons ---------------- */
+
+
+
+
+
+
+
+.brand-btn {
+
+
+
+  background: var(--gradient-main);
+
+
+
+  border: 2px solid var(--brand-sky-accent);
+
+
+
+  border-radius: 40px;
+
+
+
+  padding: 14px 40px;
+
+
+
+  color: #fff;
+
+
+
+  font-weight: 700;
+
+
+
+  letter-spacing: 0.8px;
+
+
+
+  box-shadow: 0 8px 20px rgba(90, 217, 249, 0.4);
+
+
+
+  transition: all 0.4s ease-in-out;
+
+
+
+  animation: bounceIn 1s ease-out;
+
+
+
+}
+
+
+
+
+
+
+
+.brand-btn:hover {
+
+
+
+  transform: translateY(-7px) scale(1.02);
+
+
+
+  box-shadow: 0 18px 35px rgba(90, 217, 249, 0.9);
+
+
+
+  color: #fff;
+
+
+
+  animation: none;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Section Styling ---------------- */
+
+
+
+
+
+
+
+.section-padding {
+
+
+
+  padding: var(--section-padding);
+
+
+
+}
+
+
+
+
+
+
+
+.section-padding-lg {
+
+
+
+  padding: 140px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.abstract-section-padding {
+
+
+
+  padding: 80px 0 120px 0; 
+
+
+
+}
+
+
+
+
+
+
+
+.bg-light-section {
+
+
+
+  background: var(--section-bg-light);
+
+
+
+}
+
+
+
+
+
+
+
+h2.display-4 {
+
+
+
+  text-align: center;
+
+
+
+  font-weight: 800;
+
+
+
+  color: var(--brand-blue-dark); /* Default title color (dark blue/black) */
+
+
+
+  position: relative;
+
+
+
+  margin-bottom: 2.5rem;
+
+
+
+  animation: glowPulse 4s infinite ease-in-out;
+
+
+
+}
+
+
+
+
+
+
+
+/* RE-INTRODUCED for dark background */
+
+
+
+#titleservices h2.display-4 {
+
+
+
+  color: #fff; 
+
+
+
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px var(--brand-sky-accent);
+
+
+
+}
+
+
+
+
+
+
+
+#titleservices h2.display-4::after {
+
+
+
+  background: var(--brand-sky-accent);
+
+
+
+}
+
+
+
+
+
+
+
+h2.display-4::after {
+
+
+
+  content: "";
+
+
+
+  width: 100px;
+
+
+
+  height: 5px;
+
+
+
+  background: var(--brand-sky-accent);
+
+
+
+  border-radius: 3px;
+
+
+
+  position: absolute;
+
+
+
+  left: 50%;
+
+
+
+  bottom: -15px;
+
+
+
+  transform: translateX(-50%);
+
+
+
+}
+
+
+
+
+
+
+
+.brand-bg {
+
+
+
+  background-color: var(--brand-blue-dark); 
+
+
+
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.0) 100%);
+
+
+
+  color: var(--text-light-color); /* Default text color for .brand-bg sections */
+
+
+
+}
+
+
+
+
+
+
+
+/* This block should now be adjusted to apply to general H4s in .brand-bg if needed,
+
+
+
+   but for service-card, we will be more specific below. */
+
+
+
+/* .brand-bg h4 {
+
+
+
+  color: #fff !important;
+
+
+
+} */
+
+
+
+
+
+
+
+/* This block should now be adjusted to apply to general UL LIs in .brand-bg if needed,
+
+
+
+   but for service-list, we will be more specific below. */
+
+
+
+/* .brand-bg ul li {
+
+
+
+  color: #e0e0e0;
+
+
+
+} */
+
+
+
+
+
+
+
+/* ---------------- About Section Image & Layout Styles ---------------- */
+
+
+
+
+
+
+
+/* Text should be left-aligned on large screens when image is present */
+
+
+
+.col-lg-7 p.text-lg-start {
+
+
+
+    text-align: left !important;
+
+
+
+}
+
+
+
+
+
+
+
+.col-lg-7 p.lead.text-lg-start {
+
+
+
+    text-align: left !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Specific image styling for the About section */
+
+
+
+.about-section-image {
+
+
+
+    max-height: 450px; 
+
+
+
+    width: 100%;
+
+
+
+    object-fit: contain; 
+
+
+
+    border-radius: 12px;
+
+
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+
+
+    transition: all 0.5s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.about-section-image:hover {
+
+
+
+    transform: scale(1.02);
+
+
+
+    box-shadow: 0 15px 40px rgba(90, 217, 249, 0.5); 
+
+
+
+}
+
+
+
+
+
+
+
+/* Ensure the 'Who We Serve' box has appropriate alignment when in a column */
+
+
+
+.who-we-serve-box {
+
+
+
+    max-width: 550px; 
+
+
+
+    margin-left: auto;
+
+
+
+    margin-right: auto;
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+/* --- Who We Serve Attractive Badges Styles --- */
+
+
+
+
+
+
+
+/* Use a slightly different background for visual separation */
+
+
+
+.brand-bg-light {
+
+
+
+    background-color: var(--section-bg-light); 
+
+
+
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+
+
+}
+
+
+
+
+
+
+
+.who-we-serve-box h3 {
+
+
+
+    color: var(--brand-blue-dark); 
+
+
+
+}
+
+
+
+
+
+
+
+/* Style for the individual client item container */
+
+
+
+.client-badge-item {
+
+
+
+    background: #fff;
+
+
+
+    transition: all 0.4s ease-in-out;
+
+
+
+    cursor: pointer;
+
+
+
+    border-bottom: 4px solid var(--brand-blue-mid) !important; 
+
+
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+
+
+    height: 100%; 
+
+
+
+    display: flex;
+
+
+
+    flex-direction: column;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    padding: 1rem;
+
+
+
+    border-radius: 0.375rem; 
+
+
+
+}
+
+
+
+
+
+
+
+/* Hover effect */
+
+
+
+.client-badge-item:hover {
+
+
+
+    transform: translateY(-8px) scale(1.03);
+
+
+
+    box-shadow: 0 12px 30px rgba(90, 217, 249, 0.4); 
+
+
+
+    border-bottom-color: var(--brand-sky-accent) !important; 
+
+
+
+}
+
+
+
+
+
+
+
+/* Styling the Icon/Emoji */
+
+
+
+.client-badge-item .h3 {
+
+
+
+    font-size: 2.2rem;
+
+
+
+    line-height: 1;
+
+
+
+    color: var(--brand-sky-accent); 
+
+
+
+    transition: transform 0.3s ease;
+
+
+
+    margin-bottom: 0.5rem; 
+
+
+
+}
+
+
+
+
+
+
+
+.client-badge-item:hover .h3 {
+
+
+
+    transform: rotateY(360deg); 
+
+
+
+}
+
+
+
+
+
+
+
+/* Styling the Client Name */
+
+
+
+.client-badge-item p {
+
+
+
+    color: var(--brand-blue-dark);
+
+
+
+    font-size: 0.95rem;
+
+
+
+    font-weight: 600; 
+
+
+
+    margin-bottom: 0;
+
+
+
+}
+
+
+
+
+
+/* ---------------- Full-Width Mortgage Services (NEW STYLES) ---------------- */
+
+/* This section handles the full-width background and card icon styling */
+
+
+
+/* Ensures the background of the section spans 100% width when using container-fluid */
+
+.full-width-section-bg {
+
+    width: 100%; 
+
+    background: var(--section-bg-light); 
+
+}
+
+
+
+/* Updated styling for the icon inside the card */
+
+.mortgage-card .icon-wrapper {
+
+    /* Using Flexbox to center the icon */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    background-color: var(--brand-sky-accent);
+
+    margin-bottom: 1rem;
+
+    box-shadow: 0 4px 10px rgba(90, 217, 249, 0.5); /* Icon glow */
+
+    transition: all 0.4s ease-in-out;
+
+}
+
+
+
+.mortgage-card:hover .icon-wrapper {
+
+    background-color: var(--brand-blue-mid);
+
+    box-shadow: 0 4px 15px rgba(21, 50, 92, 0.4);
+
+}
+
+
+
+.mortgage-card .icon-wrapper i {
+
+    color: #fff !important; /* White icon on blue background */
+
+    font-size: 1.8rem !important;
+
+}
+
+
+
+.service-points li {
+
+    font-size: 0.95rem; /* Slightly smaller font for list items for clean look */
+
+}
+
+
+
+
+
+/* ---------------- Title Services Section (EXISTING & MODIFIED Card Styles) ---------------- */
+
+
+
+/* Style for the container card */
+
+
+
+.service-card {
+
+
+
+    background: #fff; /* Cards remain white */
+
+
+
+    border-radius: 12px;
+
+
+
+    padding: 30px;
+
+
+
+    height: 100%;
+
+
+
+    transition: all 0.4s ease-in-out;
+
+
+
+    border-bottom: 5px solid var(--brand-sky-accent); /* Accent border for depth */
+
+
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+
+
+
+
+
+
+.service-card:hover {
+
+
+
+    transform: translateY(-8px) scale(1.01);
+
+
+
+    box-shadow: 0 18px 40px rgba(90, 217, 249, 0.4); /* Glow on hover with sky accent */
+
+
+
+    border-bottom-color: var(--brand-blue-mid); 
+
+
+
+}
+
+
+
+
+
+
+
+/* Titles inside the card */
+
+
+
+.service-card h4.brand-text { /* Targeting specifically with .brand-text class */
+
+
+
+    color: var(--brand-blue-dark); /* Dark blue for the card titles on white background */
+
+
+
+    border-bottom: 2px solid var(--section-bg-light); 
+
+
+
+    padding-bottom: 15px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Icon style for titles */
+
+
+
+.service-card h4.brand-text i { /* Targeting specifically with .brand-text class */
+
+
+
+    color: var(--brand-blue-dark); 
+
+
+
+    font-size: 1.5rem;
+
+
+
+}
+
+
+
+
+
+
+
+/* Styling the list items */
+
+
+
+.service-list li {
+
+
+
+    font-size: 1.1rem;
+
+
+
+    padding: 10px 0;
+
+
+
+    border-bottom: 1px dashed rgba(45, 96, 165, 0.1);
+
+
+
+    color: var(--brand-text-color); /* Ensures text is black/dark gray */
+
+
+
+    display: flex;
+
+
+
+    align-items: flex-start;
+
+
+
+}
+
+
+
+
+
+
+
+/* Styling the list icons */
+
+
+
+.service-list li i {
+
+
+
+    color: var(--brand-sky-accent); /* Sky accent for the list item icons for good contrast */
+
+
+
+    font-size: 1.2rem;
+
+
+
+    flex-shrink: 0;
+
+
+
+    margin-top: 2px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Remove last border for clean look */
+
+
+
+.service-list li:last-child {
+
+
+
+    border-bottom: none;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Cards ---------------- */
+
+
+
+
+
+
+
+.card-hover-light {
+
+
+
+  background: #fff;
+
+
+
+  border-radius: 18px;
+
+
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+
+
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+
+
+  position: relative;
+
+
+
+  overflow: hidden;
+
+
+
+  border: 1px solid #eee;
+
+
+
+}
+
+
+
+
+
+
+
+.card-hover-light::before {
+
+
+
+  content: "";
+
+
+
+  position: absolute;
+
+
+
+  inset: 0;
+
+
+
+  background: var(--gradient-glow);
+
+
+
+  opacity: 0;
+
+
+
+  transition: opacity 0.5s;
+
+
+
+  z-index: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.card-hover-light:hover::before {
+
+
+
+  opacity: 0.1;
+
+
+
+}
+
+
+
+
+
+
+
+.card-hover-light:hover {
+
+
+
+  transform: translateY(-12px) rotate(-1deg) scale(1.02);
+
+
+
+  box-shadow: 0 20px 50px rgba(90, 217, 249, 0.35);
+
+
+
+}
+
+
+
+
+
+
+
+.card-hover-light * {
+
+
+
+  position: relative;
+
+
+
+  z-index: 1;
+
+
+
+}
+
+
+
+
+
+
+
+.mortgage-card {
+
+
+
+  border-top: 5px solid var(--brand-blue-mid);
+
+
+
+  transition: border-color 0.4s;
+
+
+
+  animation: bounceIn 0.8s ease-out;
+
+
+
+}
+
+
+
+
+
+
+
+.mortgage-card:hover {
+
+
+
+  border-top-color: var(--brand-sky-accent);
+
+
+
+}
+
+
+
+
+
+
+
+.mortgage-card .brand-text {
+
+
+
+  color: var(--brand-blue-mid);
+
+
+
+}
+
+
+
+
+
+
+
+.stagger-item {
+
+
+
+  opacity: 0;
+
+
+
+  transform: translateY(30px);
+
+
+
+  transition: all 0.6s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.stagger-item.active {
+
+
+
+  opacity: 1;
+
+
+
+  transform: translateY(0);
+
+
+
+  animation: staggerFade 0.6s ease forwards;
+
+
+
+}
+
+
+
+
+
+
+
+.list-unstyled li i {
+
+
+
+  animation: floatIn 2s infinite ease-in-out;
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Reveal/Scroll Animations ---------------- */
+
+
+
+
+
+
+
+.reveal {
+
+
+
+  opacity: 0;
+
+
+
+  transform: translateY(60px);
+
+
+
+  transition: all 1.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.reveal.active {
+
+
+
+  opacity: 1;
+
+
+
+  transform: translateY(0);
+
+
+
+  animation: fadeZoomIn 1.5s ease forwards;
+
+
+
+}
+
+
+
+
+
+
+
+.reveal.slide-left.active { animation: slideInLeft 1.2s ease forwards; }
+
+
+
+.reveal.slide-right.active { animation: slideInRight 1.2s ease forwards; }
+
+
+
+.reveal.fade-zoom.active { animation: fadeZoomIn 1.5s ease forwards; }
+
+
+
+
+
+
+
+/* ---------------- Back To Top ---------------- */
+
+
+
+
+
+
+
+#backToTop {
+
+
+
+  position: fixed;
+
+
+
+  bottom: 30px;
+
+
+
+  right: 30px;
+
+
+
+  background: var(--gradient-main);
+
+
+
+  color: #fff;
+
+
+
+  border: none;
+
+
+
+  border-radius: 50%;
+
+
+
+  width: 50px;
+
+
+
+  height: 50px;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  font-size: 1.4rem;
+
+
+
+  cursor: pointer;
+
+
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+
+
+
+  opacity: 0;
+
+
+
+  visibility: hidden;
+
+
+
+  transform: translateY(40px);
+
+
+
+  transition: all 0.4s ease;
+
+
+
+  z-index: 999;
+
+
+
+  animation: bounceIn 0.5s ease-out;
+
+
+
+}
+
+
+
+
+
+
+
+#backToTop.show {
+
+
+
+  opacity: 1;
+
+
+
+  visibility: visible;
+
+
+
+  transform: translateY(0);
+
+
+
+}
+
+
+
+
+
+
+
+#backToTop:hover {
+
+
+
+  transform: translateY(-3px) scale(1.1);
+
+
+
+  box-shadow: 0 10px 30px rgba(90, 217, 249, 0.7);
+
+
+
+}
+
+
+
+
+
+
+
+/* ---------------- Footer ---------------- */
+
+
+
+
+
+
+
+footer {
+
+
+
+  background: var(--brand-blue-dark);
+
+
+
+  color: #e0e0e0;
+
+
+
+  text-align: center;
+
+
+
+  padding: 45px 0;
+
+
+
+  font-size: 0.9rem;
+
+
+
+  box-shadow: inset 0 6px 10px rgba(0,0,0,0.4);
+
+
+
+}
+
+
+
+
+
+
+
+/* ================================================================ */
+
+
+
+/* 🌐 RESPONSIVE DESIGN – MOBILE-FIRST */
+
+
+
+/* ================================================================ */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991.98px) {
+
+
+
+  .navbar { height: 72px; padding: 0 20px; }
+
+
+
+  body { margin-top: 72px; }
+
+
+
+
+
+
+
+  .navbar-logo img { height: 150px !important; }
+
+
+
+  .navbar-logo  {margin-top:-44px;}
+
+
+
+  .navbar-toggler{margin-top: -38px;}
+
+
+
+
+
+
+
+  .navbar-collapse { position: absolute; top: 55%; left: 0; right: 0; width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); padding: 15px 0; background: #fff; }
+
+
+
+
+
+
+
+  .hero-section { height: 90vh; background-attachment: scroll; text-align: center; margin-top: 20px; }
+
+
+
+
+
+
+
+  .hero-section h1 { font-size: 3rem; text-align: center; }
+
+
+
+
+
+
+
+  .hero-section p { font-size: 1.25rem; text-align: center; }
+
+
+
+
+
+
+
+  .navbar-toggler-icon{
+
+
+
+  background-color: #90c7ea;
+
+
+
+  border: none;
+
+
+
+  border-radius: 30%;
+
+
+
+  }
+
+
+
+  
+
+
+
+  /* --- ABOUT SECTION RESPONSIVE ORDERING --- */
+
+
+
+  .col-lg-7 {
+
+
+
+    order: 2; /* Put text below image on tablet/mobile */
+
+
+
+  }
+
+
+
+  .col-lg-5 {
+
+
+
+    order: 1; /* Put image above text on tablet/mobile */
+
+
+
+  }
+
+
+
+  .col-lg-7 p {
+
+
+
+    text-align: center !important; /* Center text on smaller screens */
+
+
+
+  }
+
+
+
+  
+
+
+
+  .client-badge-item {
+
+
+
+      padding: 20px; 
+
+
+
+  }
+
+
+
+  
+
+
+
+  .service-card {
+
+
+
+      margin-bottom: 20px; /* Add spacing between cards on mobile */
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767.98px) {
+
+
+
+
+
+
+
+  .navbar { height: 65px; padding: 0 10px; }
+
+
+
+
+
+
+
+  body { margin-top: 65px; }
+
+
+
+
+
+
+
+  .navbar-logo img { height: 150px !important; }
+
+
+
+  .navbar-logo  {margin-top:-44px;}
+
+
+
+  .navbar-toggler{margin-top: -40px;}
+
+
+
+
+
+
+
+  .hero-section { height: 80vh; }
+
+
+
+
+
+
+
+  .hero-section h1 { font-size: 2.3rem; }
+
+
+
+
+
+
+
+  .hero-section p { font-size: 1.1rem; }
+
+
+
+
+
+
+
+  .brand-btn { font-size: 1rem; padding: 12px 30px; border-radius: 35px; }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+
+
+
+
+
+
+
+  .navbar { height: 60px; }
+
+
+
+  body { margin-top: 60px; }
+
+
+
+    
+
+
+
+  .navbar-logo img { height: 140px !important; }
+
+
+
+  .navbar-logo  {margin-top: -40px;}
+
+
+
+  .navbar-toggler{margin-top: -40px;}
+
+
+
+  
+
+
+
+
+
+
+
+  .hero-section h1 { font-size: 1.8rem; }
+
+
+
+
+
+
+
+  .hero-section p { font-size: 0.95rem; }
+
+
+
+
+
+
+
+  .brand-btn { font-size: 0.9rem; padding: 9px 12px; }
+
+
+
+    
+
+
+
+
+
+
+
+  footer { font-size: 0.75rem; padding: 30px 10px; }
+
+
+
+
+
+
+
+}

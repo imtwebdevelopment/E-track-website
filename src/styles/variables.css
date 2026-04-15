@@ -1,0 +1,13 @@
+:root {
+  --brand-blue-dark: #0a1931;
+  --brand-blue-mid: #15325c;
+  --brand-sky-accent: #5ad9f9;
+  --brand-text-color: #1a1a1a;
+  --section-bg-light: #f0f8ff;
+  --section-padding: 120px 0;
+  --gradient-main: linear-gradient(135deg, var(--brand-blue-dark), var(--brand-blue-mid), var(--brand-sky-accent));
+  --gradient-glow: radial-gradient(circle at 30% 30%, var(--brand-sky-accent), var(--brand-blue-mid) 70%);
+  --navbar-light-bg: #f8f8f8;
+  --navbar-light-scrolled-bg: #ffffff;
+  --navbar-light-text: var(--brand-blue-mid);
+}

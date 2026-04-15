@@ -1,0 +1,115 @@
+/* ---------------- Keyframes Animations ---------------- */
+
+
+
+@keyframes logo-pulse {
+
+  0%, 100% { transform: scale(1); }
+
+  50% { transform: scale(1.02); }
+
+}
+
+
+
+@keyframes rotatingGlow {
+
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+
+}
+
+
+
+@keyframes fadeSlideUp { 
+
+  0% { opacity: 0; transform: translateY(60px); } 
+
+  100% { opacity: 1; transform: translateY(0); } 
+
+}
+
+
+
+@keyframes fadeSlideDown { 
+
+  0% { opacity: 0; transform: translateY(-60px); } 
+
+  100% { opacity: 1; transform: translateY(0); } 
+
+}
+
+
+
+@keyframes fadeZoomIn { 
+
+  0% { opacity: 0; transform: scale(0.98); } 
+
+  100% { opacity: 1; transform: scale(1); } 
+
+}
+
+
+
+@keyframes slideInLeft { 
+
+  0% { opacity: 0; transform: translateX(-100px); } 
+
+  100% { opacity: 1; transform: translateX(0); } 
+
+}
+
+
+
+@keyframes slideInRight { 
+
+  0% { opacity: 0; transform: translateX(100px); } 
+
+  100% { opacity: 1; transform: translateX(0); } 
+
+}
+
+
+
+@keyframes bounceIn {
+
+  0% { opacity: 0; transform: scale(0.3) translateY(50px); }
+
+  50% { opacity: 0.8; transform: scale(1.05); }
+
+  70% { transform: scale(0.9); }
+
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+
+}
+
+
+
+@keyframes staggerFade {
+
+  0% { opacity: 0; transform: translateY(30px); }
+
+  100% { opacity: 1; transform: translateY(0); }
+
+}
+
+
+
+@keyframes floatIn {
+
+  0%, 100% { transform: translateY(0px); }
+
+  50% { transform: translateY(-5px); }
+
+}
+
+
+
+@keyframes glowPulse {
+
+  0%, 100% { text-shadow: 0 0 10px rgba(90, 217, 249, 0.3); }
+
+  50% { text-shadow: 0 0 20px var(--brand-sky-accent), 0 0 30px rgba(90, 217, 249, 0.5); }
+
+}
